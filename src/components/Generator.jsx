@@ -11,9 +11,10 @@ function Generator({ value, theme, selected }) {
           bcid: selected,
           text: value,
           scale: 5,
-          includetext: false,
+          includetext: selected==="ean13" || selected==="ean8",
           backgroundcolor: theme === 'light' ? 'FFFFFF' : '212529',
           barcolor: theme === 'light' ? '000000' : 'F8F9FA',
+          textcolor: theme === 'light' ? '000000' : 'F8F9FA'
         });
       } catch (error) {
         console.error('Error generating Data Matrix code:', error);

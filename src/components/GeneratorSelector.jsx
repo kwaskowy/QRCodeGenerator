@@ -6,7 +6,9 @@ function GeneratorSelector({ selected, setSelected }) {
     { id: 'azteccode', label: 'Aztec' },
     { id: 'datamatrix', label: 'Data Matrix' },
     { id: 'dotcode', label: 'Dot Code' },
-    { id: 'maxicode', label: 'Maxi Code' }
+    { id: 'maxicode', label: 'Maxi Code' },
+    { id: 'ean13', label: 'EAN13' },
+    { id: 'ean8', label: 'EAN8' }
   ];
 
   return (

@@ -28,7 +28,7 @@ function App() {
       <ThemeSwitcher theme={theme} toggleTheme={toggleTheme} />
       <div className="text-center">
         <GeneratorSelector selected={selectedGenerator} setSelected={handleChangeGenerator} />
-        <InputField input={input} setInput={setInput} theme={theme} onGenerate={handleGenerate} />
+        <InputField input={input} setInput={setInput} theme={theme} onGenerate={handleGenerate} selectedGenerator={selectedGenerator}/>
         {generatedCode && (
           <>
             <Generator value={generatedCode} theme={theme} selected={selectedGenerator}/>
