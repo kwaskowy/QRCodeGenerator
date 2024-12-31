@@ -7,7 +7,7 @@ function QRCodeGenerator({ value, theme }) {
       <QRCode
         id="qr-code-value"
         value={value}
-        size={400}
+        size={200}
         fgColor={theme === 'light' ? '#212529' : '#F8F9FA'}
         bgColor={theme === 'light' ? '#F8F9FA' : '#212529'}
       />

@@ -1,16 +1,22 @@
 import React from 'react';
 
 function GeneratorSelector({ selected, setSelected }) {
+  const generators = [
+    { id: 'qrCode', label: 'QR' },
+    { id: 'aztec', label: 'Aztec' },
+    { id: 'dataMatrix', label: 'Data Matrix' },
+  ];
+
   return (
     <div className="btn-group btn-group-toggle btn-group-lg mb-4" data-toggle="buttons">
-      {['qrCode', 'ean13', 'ean8'].map((type) => (
+      {generators.map((generator) => (
         <label
-          key={type}
-          className={`btn btn-secondary ${selected === type ? 'active' : ''}`}
-          onClick={() => setSelected(type)}
+          key={generator.id}
+          className={`btn btn-secondary ${selected === generator.id ? 'active' : ''}`}
+          onClick={() => setSelected(generator.id)}
         >
           <input type="radio" name="options" autoComplete="off" style={{ display: 'none' }} />
-          {type.toUpperCase()}
+          {generator.label}
         </label>
       ))}
     </div>
