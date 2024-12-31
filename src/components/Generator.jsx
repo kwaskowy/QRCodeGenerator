@@ -22,7 +22,7 @@ function Generator({ value, theme, selected }) {
   }, [value, theme]);
 
   return (
-    <canvas ref={canvasRef} className={`rounded mb-3 ${theme === 'light' ? 'bg-white' : 'bg-dark'}`}></canvas>
+    <canvas id='generated-value' ref={canvasRef} className={`rounded mb-3 ${theme === 'light' ? 'bg-white' : 'bg-dark'}`}></canvas>
   );
 }
 

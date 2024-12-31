@@ -5,7 +5,8 @@ function GeneratorSelector({ selected, setSelected }) {
     { id: 'qrcode', label: 'QR' },
     { id: 'azteccode', label: 'Aztec' },
     { id: 'datamatrix', label: 'Data Matrix' },
-    { id: 'dotcode', label: 'Dot Code' }
+    { id: 'dotcode', label: 'Dot Code' },
+    { id: 'maxicode', label: 'Maxi Code' }
   ];
 
   return (

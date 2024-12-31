@@ -32,7 +32,7 @@ function App() {
         {generatedCode && (
           <>
             {<Generator value={generatedCode} theme={theme} selected={selectedGenerator}/>}
-            <DownloadButton theme={theme} />
+            <DownloadButton theme={theme} filename={selectedGenerator} />
           </>
         )}
       </div>
