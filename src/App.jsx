@@ -17,8 +17,8 @@ function App() {
 
   const handleChangeGenerator = (generator) => {
     setSelectedGenerator(generator);
-    setInput(''); // Czyszczenie input
-    setGeneratedCode(''); // Czyszczenie wygenerowanego kodu
+    setInput('');
+    setGeneratedCode('');
   };
 
   const toggleTheme = () => setTheme((prev) => (prev === 'light' ? 'dark' : 'light'));
@@ -31,7 +31,7 @@ function App() {
         <InputField input={input} setInput={setInput} theme={theme} onGenerate={handleGenerate} />
         {generatedCode && (
           <>
-            {<Generator value={generatedCode} theme={theme} selected={selectedGenerator}/>}
+            <Generator value={generatedCode} theme={theme} selected={selectedGenerator}/>
             <DownloadButton theme={theme} filename={selectedGenerator} />
           </>
         )}
