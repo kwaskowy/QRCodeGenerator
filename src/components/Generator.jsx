@@ -12,7 +12,7 @@ function Generator({ value, theme, selected }) {
           text: value,
           scale: 5,
           includetext: selected==="ean13" || selected==="ean8",
-          backgroundcolor: theme === 'light' ? 'FFFFFF' : '212529',
+          backgroundcolor: theme === 'light' ? 'F8F9FA' : '212529',
           barcolor: theme === 'light' ? '000000' : 'F8F9FA',
           textcolor: theme === 'light' ? '000000' : 'F8F9FA'
         });
