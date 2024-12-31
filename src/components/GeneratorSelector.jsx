@@ -2,9 +2,10 @@ import React from 'react';
 
 function GeneratorSelector({ selected, setSelected }) {
   const generators = [
-    { id: 'qrCode', label: 'QR' },
-    { id: 'aztec', label: 'Aztec' },
-    { id: 'dataMatrix', label: 'Data Matrix' },
+    { id: 'qrcode', label: 'QR' },
+    { id: 'azteccode', label: 'Aztec' },
+    { id: 'datamatrix', label: 'Data Matrix' },
+    { id: 'dotcode', label: 'Dot Code' }
   ];
 
   return (

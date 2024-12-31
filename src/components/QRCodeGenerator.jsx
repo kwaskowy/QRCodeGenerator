@@ -1,17 +1,28 @@
-import React from 'react';
-import QRCode from 'react-qr-code';
+import React, { useEffect, useRef } from 'react';
+import bwipjs from 'bwip-js';
 
 function QRCodeGenerator({ value, theme }) {
+  const canvasRef = useRef();
+
+  useEffect(() => {
+    if (canvasRef.current) {
+      try {
+        bwipjs.toCanvas(canvasRef.current, {
+          bcid: 'qrcode',
+          text: value,
+          scale: 5,
+          includetext: false,
+          backgroundcolor: theme === 'light' ? 'FFFFFF' : '212529',
+          barcolor: theme === 'light' ? '000000' : 'F8F9FA',
+        });
+      } catch (error) {
+        console.error('Error generating Data Matrix code:', error);
+      }
+    }
+  }, [value, theme]);
+
   return (
-    <div className={`rounded d-inline-block mb-3 ${theme === 'light' ? 'bg-white' : 'bg-dark'}`}>
-      <QRCode
-        id="qr-code-value"
-        value={value}
-        size={200}
-        fgColor={theme === 'light' ? '#212529' : '#F8F9FA'}
-        bgColor={theme === 'light' ? '#F8F9FA' : '#212529'}
-      />
-    </div>
+    <canvas ref={canvasRef} className={`rounded mb-3 ${theme === 'light' ? 'bg-white' : 'bg-dark'}`}></canvas>
   );
 }
 

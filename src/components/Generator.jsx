@@ -1,16 +1,16 @@
 import React, { useEffect, useRef } from 'react';
 import bwipjs from 'bwip-js';
 
-function DataMatrixGenerator({ value, theme }) {
+function Generator({ value, theme, selected }) {
   const canvasRef = useRef();
 
   useEffect(() => {
     if (canvasRef.current) {
       try {
         bwipjs.toCanvas(canvasRef.current, {
-          bcid: 'datamatrix',
+          bcid: selected,
           text: value,
-          scale: 3,
+          scale: 5,
           includetext: false,
           backgroundcolor: theme === 'light' ? 'FFFFFF' : '212529',
           barcolor: theme === 'light' ? '000000' : 'F8F9FA',
@@ -26,4 +26,4 @@ function DataMatrixGenerator({ value, theme }) {
   );
 }
 
-export default DataMatrixGenerator;
+export default Generator;

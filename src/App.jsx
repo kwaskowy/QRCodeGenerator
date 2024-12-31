@@ -4,10 +4,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import ThemeSwitcher from './components/ThemeSwitcher';
 import GeneratorSelector from './components/GeneratorSelector';
 import InputField from './components/InputField';
-import QRCodeGenerator from './components/QRCodeGenerator';
-import AztecCodeGenerator from './components/AztecCodeGenerator';
-import DataMatrixGenerator from './components/DataMatrixGenerator';
 import DownloadButton from './components/DownloadButton';
+import Generator from './components/Generator';
 
 function App() {
   const [input, setInput] = useState('');
@@ -33,9 +31,7 @@ function App() {
         <InputField input={input} setInput={setInput} theme={theme} onGenerate={handleGenerate} />
         {generatedCode && (
           <>
-            {selectedGenerator === 'qrCode' && <QRCodeGenerator value={generatedCode} theme={theme} />}
-            {selectedGenerator === 'aztec' && <AztecCodeGenerator value={generatedCode} theme={theme} />}
-            {selectedGenerator === 'dataMatrix' && <DataMatrixGenerator value={generatedCode} theme={theme} />}
+            {<Generator value={generatedCode} theme={theme} selected={selectedGenerator}/>}
             <DownloadButton theme={theme} />
           </>
         )}
