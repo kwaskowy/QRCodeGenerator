@@ -10,7 +10,7 @@ import Generator from './components/Generator';
 function App() {
   const [input, setInput] = useState('');
   const [theme, setTheme] = useState('light');
-  const [selectedGenerator, setSelectedGenerator] = useState('qrCode');
+  const [selectedGenerator, setSelectedGenerator] = useState('qrcode');
   const [generatedCode, setGeneratedCode] = useState('');
 
   const handleGenerate = () => setGeneratedCode(input);
